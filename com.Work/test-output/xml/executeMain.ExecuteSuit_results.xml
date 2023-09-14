@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AdminAccountTest02"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="21.819">
+  <properties />
+  
+  
+            <testcase name="adminLogin" time="4.399" classname="executeMain.ExecuteSuit" />
+                <testcase name="adminAccount" time="16.983" classname="executeMain.ExecuteSuit" />
+                <testcase name="fetchValuesFromPendingUserTab" time="0.437" classname="executeMain.ExecuteSuit" />
+      
+</testsuite>

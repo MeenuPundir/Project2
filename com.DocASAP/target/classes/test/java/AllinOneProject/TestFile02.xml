@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite2">
+	<test name="AdminAccountTest02">
+	<listeners>
+	 	<listener class-name="customReport.ExtentReporterNG" />
+	 	</listeners>
+			<classes>
+				<class name="executeMain.ExecuteSuit">
+				<methods>
+				<include name="adminLogin"/>
+				<include name="adminAccount"/>
+				<include name="fetchValuesFromPendingUserTab"/>
+				</methods></class>
+			</classes>
+
+	</test>
+</suite>

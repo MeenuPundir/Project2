@@ -1,0 +1,75 @@
+package Utilities;
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class AddANewCust {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://admin-demo.nopcommerce.com/login");
+
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+
+		WebElement ele = driver.findElement(By.name("Email"));
+		ele.clear();
+		ele.sendKeys("admin@yourstore.com");
+		Thread.sleep(2000);
+		WebElement ele1 = driver.findElement(By.id("Password"));
+		ele1.clear();
+		ele1.sendKeys("admin");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div/div[2]/div[1]/div/form/div[3]/button")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[3]/aside/div/div[4]/div/div/nav/ul/li[4]/a")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[3]/aside/div/div[4]/div/div/nav/ul/li[4]/ul/li[1]/a")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[3]/div[1]/form[1]/div/div/a")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.name("Email")).sendKeys("Shivam1@mail.com");
+		Thread.sleep(2000);
+		driver.findElement(By.name("Password")).sendKeys("123456");
+		Thread.sleep(2000);
+		driver.findElement(By.name("FirstName")).sendKeys("Shivam");
+		Thread.sleep(2000);
+		driver.findElement(By.name("LastName")).sendKeys("Srivastava");
+		Thread.sleep(2000);
+		driver.findElement(By.name("Gender")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.name("DateOfBirth")).sendKeys("06/15/1999");
+		Thread.sleep(2000);
+		WebElement ele2 = driver.findElement(By.xpath("//*[@id=\"VendorId\"]"));
+
+		Select vl = new Select(ele2);
+		vl.selectByValue("2");
+		Thread.sleep(3000);
+		driver.findElement(By.name("save")).click();
+		Thread.sleep(3000);
+
+		TakesScreenshot sc = ((TakesScreenshot) driver);
+
+		File src = sc.getScreenshotAs(OutputType.FILE);
+		File f2 = new File("C:\\New folder\\screenshot.png");
+		FileUtils.copyFile(src, f2);
+
+		driver.findElement(By.xpath("//*[@id=\"navbarText\"]/ul/li[3]/a")).click();
+		Thread.sleep(4000);
+		driver.close();
+
+	}
+
+}

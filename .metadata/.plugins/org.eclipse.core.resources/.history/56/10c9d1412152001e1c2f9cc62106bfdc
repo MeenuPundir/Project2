@@ -1,0 +1,33 @@
+package practice;
+
+import java.util.Set;
+import java.util.TreeSet;
+
+class Solution {
+    public int solution(int[] A) {
+        // Implement your solution here
+  Set<Integer> set = new TreeSet<>();
+
+        for (int a : A) {
+            set.add(a);
+        }
+
+        int N = set.size();
+
+        int[] C = new int[N];
+
+        int index = 0;
+
+        for (int a : set) {
+            C[index++] = a;
+        }
+
+        for (int i = 0; i < N; i++) {
+
+            if (C[i] > 0 && C[i] <= N) {
+                C[i] = 0;
+            }
+        }
+		return index;        
+    }       
+}

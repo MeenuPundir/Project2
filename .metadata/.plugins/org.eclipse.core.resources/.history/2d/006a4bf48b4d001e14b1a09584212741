@@ -1,0 +1,16 @@
+package pageObject;
+
+public class LoginPage {
+	WebDriver driver;
+	
+	public LoginPage(WebDriver driver) {
+		
+	}
+	
+	@findBy(Id="Email")
+	WebElement email;
+	
+	
+	
+
+}

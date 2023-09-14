@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+    <classes>
+			<class name="PracticeSuit.Url">
+				<methods>
+
+
+					<include name="getUrl"></include>
+				</methods>
+
+
+			</class>
+
+
+			<class name="PracticeSuit.Title">
+				<methods>
+					<include name="getTitle"></include>
+
+				</methods>
+
+
+			</class>
+			<class name="PracticeSuit.Login">
+				<methods>
+					<include name="loginPage"></include>
+				</methods>
+
+
+			</class>
+
+
+
+		</classes>
+
+
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

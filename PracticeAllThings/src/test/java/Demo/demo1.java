@@ -1,0 +1,104 @@
+package Demo;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class demo1 {
+
+		WebDriver driver;
+
+		@BeforeTest
+		public void setup() throws InterruptedException{
+			
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+			
+			//WebDriverManager.firefoxdriver().setup();
+			//driver = new FirefoxDriver();
+			//WebDriverManager.edgedriver().setup();
+			//driver = new EdgeDriver();
+			
+		
+			driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		
+			driver.manage().window().maximize();
+			Thread.sleep(3000);
+
+		}
+
+		@Test(priority=0)
+		public void login() throws InterruptedException {
+
+			driver.findElement(By.name("username")).sendKeys("Admin");
+
+			Thread.sleep(2000);
+
+			driver.findElement(By.name("password")).sendKeys("admin123");
+
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
+			Thread.sleep(2000);
+		}
+
+		
+		@Test
+		public void addemployee() throws InterruptedException {
+			driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a/span")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/div[2]/nav/ul/li[3]/a")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.name("firstName")).sendKeys("Meenu");
+			Thread.sleep(2000);
+			//driver.findElement(By.name("Middle Name")).sendKeys(".");
+			//Thread.sleep(2000);
+			driver.findElement(By.name("lastName")).sendKeys("Pundir");
+			Thread.sleep(2000);
+			WebElement ele =driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/input"));
+			Thread.sleep(2000);
+			//ele.click();
+			//https://blazedemo.com/purchase.php
+			ele.clear();
+			Thread.sleep(2000);
+			ele.sendKeys("12345");
+			
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[1]/div/div[2]/div")).click();
+			Thread.sleep(2000);
+			
+			WebElement ele1= driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[2]/button[2]"));
+			ele1.sendKeys("C:\\Users\\ASUS\\OneDrive\\Desktop\\wallpaper\\shiva.jpg");
+			//driver.switchTo().alert().accept();
+			//ele1.sendKeys("C:\Users\ASUS\OneDrive\Desktop\wallpaper");
+
+			Thread.sleep(2000);
+			driver.findElement(By.id("file-submit")).click();
+			
+			
+			
+			
+
+		}
+		
+		
+		
+		@AfterTest
+		public void teardown() throws InterruptedException {
+			Thread.sleep(2000);
+			driver.close();
+		}
+
+	}

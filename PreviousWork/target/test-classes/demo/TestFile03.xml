@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite3">
+	<test name="providerAccountTest03">
+		<classes>
+			<listeners>
+	 		<listener class-name="customReport.ExtentReporterNG" />
+	 		</listeners>
+				<class name="executeMain.ExecuteSuit">
+				<methods>
+				<include name="providerAccountLogin"/>
+				<include name="alert"/>
+				<include name="frameHandle"/>
+				</methods></class>
+		</classes>
+
+	</test>
+</suite>

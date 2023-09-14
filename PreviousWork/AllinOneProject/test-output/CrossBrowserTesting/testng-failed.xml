@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CrossBrowserTesting]" parallel="tests">
+  <parameter name="browsr" value="IE"/>
+  <test name="IETest(failed)" parallel="tests">
+    <parameter name="browsr" value="IE"/>
+    <classes>
+      <class name="executeMain.ExecuteMain">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="loginPage"/>
+        </methods>
+      </class> <!-- executeMain.ExecuteMain -->
+    </classes>
+  </test> <!-- IETest(failed) -->
+  <test name="ChromeTest(failed)" parallel="tests">
+    <parameter name="browsr" value="Chrome"/>
+    <classes>
+      <class name="executeMain.ExecuteMain">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="loginPage"/>
+        </methods>
+      </class> <!-- executeMain.ExecuteMain -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test name="FirefoxTest(failed)" parallel="tests">
+    <parameter name="browsr" value="Firefox"/>
+    <classes>
+      <class name="executeMain.ExecuteMain">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="loginPage"/>
+        </methods>
+      </class> <!-- executeMain.ExecuteMain -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [CrossBrowserTesting] -->

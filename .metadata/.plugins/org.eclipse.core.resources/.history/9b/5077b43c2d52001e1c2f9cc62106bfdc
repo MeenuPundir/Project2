@@ -1,0 +1,17 @@
+package StepDefination;
+
+import org.openqa.selenium.WebDriver;
+import org.apache.logging.log4j.*;
+import Pageobject.AddNewCustomer;
+import Pageobject.Loginpage;
+import Utilities.AddANewCust;
+
+public class Baseclass {
+	
+	public static  WebDriver driver;
+	public Loginpage loginPg;
+	//public AddNewCustomer addNewCustPg;
+	public AddANewCust addNewCustPg;
+	public static Logger log;
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestingInCrossBrowsers]" parallel="tests">
+  <parameter name="browsr" value="IE"/>
+  <test name="ChromeTest(failed)" parallel="tests">
+    <parameter name="browsr" value="Chrome"/>
+    <classes>
+      <class name="executeMain.CrossBrowserTesting">
+        <methods>
+          <include name="loginPage"/>
+          <include name="setBrowsers"/>
+          <include name="setBrowsers"/>
+          <include name="setBrowsers"/>
+        </methods>
+      </class> <!-- executeMain.CrossBrowserTesting -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test name="IETest(failed)" parallel="tests">
+    <parameter name="browsr" value="IE"/>
+    <classes>
+      <class name="executeMain.CrossBrowserTesting">
+        <methods>
+          <include name="loginPage"/>
+          <include name="setBrowsers"/>
+          <include name="setBrowsers"/>
+          <include name="setBrowsers"/>
+        </methods>
+      </class> <!-- executeMain.CrossBrowserTesting -->
+    </classes>
+  </test> <!-- IETest(failed) -->
+  <test name="FirefoxTest(failed)" parallel="tests">
+    <parameter name="browsr" value="Firefox"/>
+    <classes>
+      <class name="executeMain.CrossBrowserTesting">
+        <methods>
+          <include name="loginPage"/>
+          <include name="setBrowsers"/>
+          <include name="setBrowsers"/>
+          <include name="setBrowsers"/>
+        </methods>
+      </class> <!-- executeMain.CrossBrowserTesting -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [TestingInCrossBrowsers] -->

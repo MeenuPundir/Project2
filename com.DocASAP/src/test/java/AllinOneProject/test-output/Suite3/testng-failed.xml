@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite3]">
+  <listeners>
+    <listener class-name="customReport.ExtentReporterNG"/>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="screenShot.ScreenShotOnFailure"/>
+  </listeners>
+  <test name="providerAccountTest03(failed)">
+    <classes>
+      <class name="executeMain.ExecuteSuit">
+        <methods>
+          <include name="methodLog4j"/>
+          <include name="setup"/>
+          <include name="loginCredentialsReadXl"/>
+          <include name="loginPage"/>
+        </methods>
+      </class> <!-- executeMain.ExecuteSuit -->
+    </classes>
+  </test> <!-- providerAccountTest03(failed) -->
+</suite> <!-- Failed suite [Suite3] -->

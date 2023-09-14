@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="My test suite" preserver-order="true">
+	<listeners>
+	
+	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="screenShot.ScreenShotOnFailure" />
+	<listener class-name="customReport.ExtentReporterNG" />
+	
+	</listeners>
+		<suite-files>
+			<suite-file path="TestFile01.xml"></suite-file>
+			<suite-file path="TestFile02.xml"></suite-file>
+			<suite-file path="TestFile03.xml"></suite-file>
+		</suite-files>
+</suite>

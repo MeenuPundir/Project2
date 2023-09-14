@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestingInCrossBrowsers" parallel="tests" >
+  <test name="ChromeTest">
+  <parameter name="browsr" value="Chrome" />
+    <classes>
+       <class name="executeMain.CrossBrowserTesting">
+       		<methods> 
+				<include name="setBrowsers"/>
+				<include name="setUrl"/>
+				<include name="loginPage"/>
+				
+			</methods>
+		</class>
+      
+    </classes>
+  </test>
+  <test name="FirefoxTest">
+  <parameter name="browsr" value="Firefox" />
+    <classes>
+       <class name="executeMain.CrossBrowserTesting">
+       		<methods> 
+				<include name="setBrowsers"/>
+				<include name="setUrl"/>
+				<include name="loginPage"/>
+								
+			</methods>
+       </class>
+    </classes>
+  </test>
+  <test name="IETest">
+  <parameter name="browsr" value="IE" />
+    <classes>
+      <class name="executeMain.CrossBrowserTesting">
+       		<methods> 
+				<include name="setBrowsers"/>
+				<include name="setUrl"/>
+				<include name="loginPage"/>				
+				
+			</methods>
+       </class>
+    </classes>
+  </test>
+ </suite>
